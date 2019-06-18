@@ -1,151 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Athi's Media</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans " type="text/css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <style>
+        html,
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 15px;
+            margin: 1;
+            min-height: 180px;
+            padding: 0;
+            width: 384px;
 
-    html, body{
-    font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
-    margin: 1;
-    min-height: 180px;
-    padding: 0;
-    width: 384px;
-    
-    }
+        }
 
-    h1 {
-    font-family: 'Menlo' , monospace;
-    font-size: 22px;
-    font-weight: 400;
-    margin: 0;
-    color: #3D9970;
+        h1 {
+            font-family: 'Menlo', monospace;
+            font-size: 22px;
+            font-weight: 400;
+            margin: 0;
+            color: #3D9970;
 
-    }
+        }
 
-    a:link, a:visited{
-    color:#000;
-    outline:0;
-    text-decoration: none;
+        h2 {
+            font-family: 'garamond', monospace;
+            font-size: 15px;
+            font-weight: 1000;
+            margin: 0;
+            color: #000;
+        }
+
+        a:link,
+        a:visited {
+            color: #000;
+            outline: 0;
+            text-decoration: none;
 
 
-    }
+        }
 
-    img {
-    width: 30 px;
+        img {
+            width: 30 px;
 
-    }
+        }
 
-    .modal-header{
-    align-items: center;
-    border-bottom: 0.5px solid #dadada
-    }
+        .modal-header {
+            align-items: center;
+            border-bottom: 0.5px solid #dadada
+        }
 
-    .modal-content {
-    padding:0 22px;
+        .modal-content {
+            padding: 0 22px;
 
-    }
+        }
 
-    .modal-icons {
+        .modal-icons {
 
-    border-top: 0.5px solid #dadada;
-    height: 50px;
-    width: 100%;
-    }
+            border-top: 0.5px solid #dadada;
+            height: 50px;
+            width: 100%;
+        }
 
-    .logo {
-    padding: 16px;
+        .logo {
+            padding: 16px;
 
-    }
+        }
 
-    .logo-icon {
-    vertical-align: text-bottom;
-    margin-right:12 px;
+        .logo-icon {
+            vertical-align: text-bottom;
+            margin-right: 12 px;
 
-    }
+        }
 
-    .version {
-    color: #FE0101;
-    font-size: 18px;
+        .version {
+            color: #FE0101;
+            font-size: 18px;
 
-    }
+        }
 
-    .flex-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 22px;
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 22px;
 
-    }
+        }
 
-    .flex {
-    opacity: 1;
-    transition:opacity 0.2s ease-in-out;
-    width: 120px;
-    }
+        .flex {
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out;
+            width: 120px;
+        }
 
-    .flex:hover {
-    opacity: 0.4;
+        .flex:hover {
+            opacity: 0.4;
 
-    }
+        }
 
-    .flex .fa {
-    font-size:40px;
-    color: #2f5876;
+        .flex .fa {
+            font-size: 40px;
+            color: #2f5876;
 
-    }
+        }
     </style>
 </head>
+
 <body>
     <div class="modal-header">
         <h1 class="logo">
             <img src="images/dropdown-icon.png" alt="Athi's Media" class="logo-icon"> Athi's Media
-            <span class="version">(1.0.0)</span>
+            <span class="version">(1.0.1)</span>
         </h1>
-        <ul> 
-        <div id ="Output">
-        <p>
-        <script src="popup.js"></script>
-        <script>
-            document.write(hello())
-        </script>
-        </p>
-        </div>
-
+        <ul>
+        <h2>QUOTE OF THE DAY:</h2> 
+        <p id="quote"></p>
     </div>
-<div class="modal-content">
-    <p>Access Athi's various media platforms(Github,LinkedIn,Resume,Instagram)!</p>
-    <div class="modal-icons">
-        <div class="flex-container">
-            <div class="flex">
-            <a href="https://github.com/athithianr" target="_blank">
-            <i class="fa fa-github"></i>
-            </a>
-            </div>
-            <div class="flex">
-                <a href="https://www.linkedin.com/in/athi-rajkumar-141301179/" target="_blank">
-                    <i class="fa fa-linkedin"></i>
-                </a>
-            </div>
-            <div class="flex">
-                <a href="https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A6324f174-e5b8-4351-bb3d-f391b87a0d70" target="_blank">
-                    <i class="fa fa-file"></i>
-                </a>
-            </div>
-            <div class="flex">
-                <a href="https://www.instagram.com/athii.r/" target="_blank">
-                    <i class="fa fa-instagram"></i>
-                </a>
-            </div>
+    <div class="modal-content">
+        <p>Access Athi's various media platforms(Github,LinkedIn,Resume,Instagram)!</p>
+        <div class="modal-icons">
+            <div class="flex-container">
+                <div class="flex">
+                    <a href="https://github.com/athithianr" target="_blank">
+                        <i class="fa fa-github"></i>
+                    </a>
+                </div>
+                <div class="flex">
+                    <a href="https://www.linkedin.com/in/athi-rajkumar-141301179/" target="_blank">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </div>
+                <div class="flex">
+                    <a href="https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A6324f174-e5b8-4351-bb3d-f391b87a0d70"
+                        target="_blank">
+                        <i class="fa fa-file"></i>
+                    </a>
+                </div>
+                <div class="flex">
+                    <a href="https://www.instagram.com/athii.r/" target="_blank">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </div>
 
+            </div>
         </div>
     </div>
-</div>
+    <script>
+        var request = new XMLHttpRequest
+        //debugger;
+        const QUOTE_API_URL = 'https://quotes.rest/qod';
+        let h = new Headers()
+        h.append('Accept', 'application/json')
+        let req = new Request(QUOTE_API_URL, {
+            method: 'GET',
+            headers: h,
+        });
+        var quote;
+        var author;
+        fetch(req)
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("HTTP Error!");
+                }
+            })
+            .then((jsonData) => {
+                quote = jsonData.contents.quotes[0].quote
+                author = jsonData.contents.quotes[0].author
+                document.getElementById("quote").innerHTML = quote + " - " + author + "</p>"
+            })
+            .catch((err) => {
+                console.log('ERROR:', err.message)
+            });
+
+    </script>
 
 
-    </body>
+</body>
+
 </html>
