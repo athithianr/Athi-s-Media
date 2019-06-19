@@ -57,9 +57,28 @@
             border-bottom: 0.5px solid #dadada
         }
 
+        .quote-header {
+            text-align: center;
+
+        }
+
+        .quote-text {
+            text-align: center;
+        }
+
+        
+        .quote-author {
+            text-align: center;
+            font-size: 12px;
+            font-style: italic;
+
+        }
+
+
         .modal-content {
             padding: 0 22px;
-
+            text-align: center;
+            font-family: 'garamond',monospace;
         }
 
         .modal-icons {
@@ -118,12 +137,22 @@
             <img src="images/dropdown-icon.png" alt="Athi's Media" class="logo-icon"> Athi's Media
             <span class="version">(1.0.1)</span>
         </h1>
-        <ul>
-        <h2>QUOTE OF THE DAY:</h2> 
-        <p id="quote"></p>
-    </div>
+
+        <div class= "quote-header">
+            <h2>QUOTE OF THE DAY:</h2> 
+        </div>
+        
+        <div class="quote-text">
+            <p id="quote"></p>
+        </div>
+
+        <div class="quote-author">
+            <p id="author"></p>
+        </div>
+
+    </div> 
     <div class="modal-content">
-        <p>Access Athi's various media platforms(Github,LinkedIn,Resume,Instagram)!</p>
+        <p>Access Athi's various media platforms (Github,LinkedIn,Resume,Instagram)</p>
         <div class="modal-icons">
             <div class="flex-container">
                 <div class="flex">
@@ -174,7 +203,8 @@
             .then((jsonData) => {
                 quote = jsonData.contents.quotes[0].quote
                 author = jsonData.contents.quotes[0].author
-                document.getElementById("quote").innerHTML = quote + " - " + author + "</p>"
+                document.getElementById("quote").innerHTML = quote 
+                document.getElementById("author").innerHTML = author
             })
             .catch((err) => {
                 console.log('ERROR:', err.message)
