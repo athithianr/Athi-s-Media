@@ -18,6 +18,7 @@
             min-height: 180px;
             padding: 0;
             width: 384px;
+            background-color: #d9b38c;
 
         }
 
@@ -26,8 +27,7 @@
             font-size: 22px;
             font-weight: 400;
             margin: 0;
-            color: #3D9970;
-
+            color:navy;
         }
 
         h2 {
@@ -43,8 +43,6 @@
             color: #000;
             outline: 0;
             text-decoration: none;
-
-
         }
 
         img {
@@ -59,14 +57,14 @@
 
         .quote-header {
             text-align: center;
-
         }
 
         .quote-text {
             text-align: center;
+            padding: 0 22px;
+
         }
 
-        
         .quote-author {
             text-align: center;
             font-size: 12px;
@@ -109,7 +107,6 @@
             display: flex;
             justify-content: space-between;
             padding: 10px 22px;
-
         }
 
         .flex {
@@ -118,16 +115,30 @@
             width: 120px;
         }
 
-        .flex:hover {
-            opacity: 0.4;
-
-        }
-
         .flex .fa {
             font-size: 40px;
             color: #2f5876;
-
         }
+
+        .flex .flextext {
+            visibility: hidden;
+            width: 120px;
+            font-size: 12px;
+            color:black;
+            text-align:center;
+            border-radius: 6px;
+            padding: 5px 0;
+            margin-bottom: -200px;
+          }
+
+        .flex:hover{
+            opacity: 0.4;
+        }
+        
+        .flex:hover .flextext{
+            visibility: visible;
+        }
+
     </style>
 </head>
 
@@ -135,7 +146,7 @@
     <div class="modal-header">
         <h1 class="logo">
             <img src="images/dropdown-icon.png" alt="Athi's Media" class="logo-icon"> Athi's Media
-            <span class="version">(1.0.1)</span>
+            <span class="version">(2.0)</span>
         </h1>
 
         <div class= "quote-header">
@@ -159,22 +170,26 @@
                     <a href="https://github.com/athithianr" target="_blank">
                         <i class="fa fa-github"></i>
                     </a>
+                    <span class='flextext'>Github</span>
                 </div>
                 <div class="flex">
                     <a href="https://www.linkedin.com/in/athi-rajkumar-141301179/" target="_blank">
                         <i class="fa fa-linkedin"></i>
                     </a>
+                    <span class='flextext'>LinkedIn</span>
                 </div>
                 <div class="flex">
                     <a href="https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A6324f174-e5b8-4351-bb3d-f391b87a0d70"
                         target="_blank">
                         <i class="fa fa-file"></i>
                     </a>
+                    <span class='flextext'>Resume</span>
                 </div>
                 <div class="flex">
                     <a href="https://www.instagram.com/athii.r/" target="_blank">
                         <i class="fa fa-instagram"></i>
                     </a>
+                    <span class='flextext'>Instagram</span>
                 </div>
 
             </div>
@@ -202,8 +217,10 @@
             })
             .then((jsonData) => {
                 quote = jsonData.contents.quotes[0].quote
+                quote = '"'+quote+'"'
                 author = jsonData.contents.quotes[0].author
-                document.getElementById("quote").innerHTML = quote 
+                author = "- " + author
+                document.getElementById("quote").innerHTML =  quote 
                 document.getElementById("author").innerHTML = author
             })
             .catch((err) => {
@@ -211,8 +228,5 @@
             });
 
     </script>
-
-
 </body>
-
 </html>
