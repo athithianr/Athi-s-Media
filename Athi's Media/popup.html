@@ -1,145 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Athi's Media</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans " type="text/css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <style>
+        html,
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 15px;
+            margin: 1;
+            min-height: 180px;
+            padding: 0;
+            width: 384px;
+            background-color: #d9b38c;
 
-    html, body{
-    font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
-    margin: 1;
-    min-height: 180px;
-    padding: 0;
-    width: 384px;
-    
-    }
+        }
 
-    h1 {
-    font-family: 'Menlo' , monospace;
-    font-size: 22px;
-    font-weight: 400;
-    margin: 0;
-    color: #3D9970;
+        h1 {
+            font-family: 'Menlo', monospace;
+            font-size: 22px;
+            font-weight: 400;
+            margin: 0;
+            color:navy;
+        }
 
-    }
+        h2 {
+            font-family: 'garamond', monospace;
+            font-size: 15px;
+            font-weight: 1000;
+            margin: 0;
+            color: #000;
+        }
 
-    a:link, a:visited{
-    color:#000;
-    outline:0;
-    text-decoration: none;
+        a:link,
+        a:visited {
+            color: #000;
+            outline: 0;
+            text-decoration: none;
+        }
+
+        img {
+            width: 30 px;
+
+        }
+
+        .modal-header {
+            align-items: center;
+            border-bottom: 0.5px solid #dadada
+        }
+
+        .quote-header {
+            text-align: center;
+        }
+
+        .quote-text {
+            text-align: center;
+            padding: 0 22px;
+
+        }
+
+        .quote-author {
+            text-align: center;
+            font-size: 12px;
+            font-style: italic;
+
+        }
 
 
-    }
+        .modal-content {
+            padding: 0 22px;
+            text-align: center;
+            font-family: 'garamond',monospace;
+        }
 
-    img {
-    width: 30 px;
+        .modal-icons {
 
-    }
+            border-top: 0.5px solid #dadada;
+            height: 50px;
+            width: 100%;
+        }
 
-    .modal-header{
-    align-items: center;
-    border-bottom: 0.5px solid #dadada
-    }
+        .logo {
+            padding: 16px;
 
-    .modal-content {
-    padding:0 22px;
+        }
 
-    }
+        .logo-icon {
+            vertical-align: text-bottom;
+            margin-right: 12 px;
 
-    .modal-icons {
+        }
 
-    border-top: 0.5px solid #dadada;
-    height: 50px;
-    width: 100%;
-    }
+        .version {
+            color: #FE0101;
+            font-size: 18px;
 
-    .logo {
-    padding: 16px;
+        }
 
-    }
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 22px;
+        }
 
-    .logo-icon {
-    vertical-align: text-bottom;
-    margin-right:12 px;
+        .flex {
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out;
+            width: 120px;
+        }
 
-    }
+        .flex .fa {
+            font-size: 40px;
+            color: #2f5876;
+        }
 
-    .version {
-    color: #FE0101;
-    font-size: 18px;
+        .flex .flextext {
+            visibility: hidden;
+            width: 120px;
+            font-size: 12px;
+            color:black;
+            text-align:center;
+            border-radius: 6px;
+            padding: 5px 0;
+            margin-bottom: -200px;
+          }
 
-    }
+        .flex:hover{
+            opacity: 0.4;
+        }
+        
+        .flex:hover .flextext{
+            visibility: visible;
+        }
 
-    .flex-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 22px;
-
-    }
-
-    .flex {
-    opacity: 1;
-    transition:opacity 0.2s ease-in-out;
-    width: 120px;
-    }
-
-    .flex:hover {
-    opacity: 0.4;
-
-    }
-
-    .flex .fa {
-    font-size:40px;
-    color: #2f5876;
-
-    }
     </style>
 </head>
+
 <body>
     <div class="modal-header">
         <h1 class="logo">
             <img src="images/dropdown-icon.png" alt="Athi's Media" class="logo-icon"> Athi's Media
-            <span class="version">(1.0.0)</span>
+            <span class="version">(2.0)</span>
         </h1>
-        <ul> id ="Quotes">
 
+        <div class= "quote-header">
+            <h2>QUOTE OF THE DAY:</h2> 
+        </div>
+        
+        <div class="quote-text">
+            <p id="quote"></p>
+        </div>
 
-        </ul>
-    </div>
-<div class="modal-content">
-    <p>Access Athi's various media platforms(Github,LinkedIn,Resume,Instagram)!</p>
-    <div class="modal-icons">
-        <div class="flex-container">
-            <div class="flex">
-            <a href="https://github.com/athithianr" target="_blank">
-            <i class="fa fa-github"></i>
-            </a>
-            </div>
-            <div class="flex">
-                <a href="https://www.linkedin.com/in/athi-rajkumar-141301179/" target="_blank">
-                    <i class="fa fa-linkedin"></i>
-                </a>
-            </div>
-            <div class="flex">
-                <a href="https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A6324f174-e5b8-4351-bb3d-f391b87a0d70" target="_blank">
-                    <i class="fa fa-file"></i>
-                </a>
-            </div>
-            <div class="flex">
-                <a href="https://www.instagram.com/athii.r/" target="_blank">
-                    <i class="fa fa-instagram"></i>
-                </a>
-            </div>
+        <div class="quote-author">
+            <p id="author"></p>
+        </div>
 
+    </div> 
+    <div class="modal-content">
+        <p>Access Athi's various media platforms (Github,LinkedIn,Resume,Instagram)</p>
+        <div class="modal-icons">
+            <div class="flex-container">
+                <div class="flex">
+                    <a href="https://github.com/athithianr" target="_blank">
+                        <i class="fa fa-github"></i>
+                    </a>
+                    <span class='flextext'>Github</span>
+                </div>
+                <div class="flex">
+                    <a href="https://www.linkedin.com/in/athi-rajkumar-141301179/" target="_blank">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                    <span class='flextext'>LinkedIn</span>
+                </div>
+                <div class="flex">
+                    <a href="https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A6324f174-e5b8-4351-bb3d-f391b87a0d70"
+                        target="_blank">
+                        <i class="fa fa-file"></i>
+                    </a>
+                    <span class='flextext'>Resume</span>
+                </div>
+                <div class="flex">
+                    <a href="https://www.instagram.com/athii.r/" target="_blank">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                    <span class='flextext'>Instagram</span>
+                </div>
+
+            </div>
         </div>
     </div>
-</div>
+    <script>
+        var request = new XMLHttpRequest
+        //debugger;
+        const QUOTE_API_URL = 'https://quotes.rest/qod';
+        let h = new Headers()
+        h.append('Accept', 'application/json')
+        let req = new Request(QUOTE_API_URL, {
+            method: 'GET',
+            headers: h,
+        });
+        var quote;
+        var author;
+        fetch(req)
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("HTTP Error!");
+                }
+            })
+            .then((jsonData) => {
+                quote = jsonData.contents.quotes[0].quote
+                quote = '"'+quote+'"'
+                author = jsonData.contents.quotes[0].author
+                author = "- " + author
+                document.getElementById("quote").innerHTML =  quote 
+                document.getElementById("author").innerHTML = author
+            })
+            .catch((err) => {
+                console.log('ERROR:', err.message)
+            });
 
-<script src="popup.js"></script>
+    </script>
 </body>
 </html>
